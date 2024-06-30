@@ -1,0 +1,121 @@
+body {
+  font-family: 'Inter', sans-serif;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(to right, #f7f7f7, #fff); /* Gradient white background */
+  color: #333;
+}
+
+.navigation-wrapper {
+  background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white background */
+  text-align: center;
+  padding: 20px;
+}
+
+.blindtech-wrapper {
+  font-size: 24px;
+  font-weight: 700;
+  color: #333;
+  text-decoration: none;
+}
+
+.button {
+  background-color: transparent;
+  border: 2px solid #333;
+  border-radius: 5px;
+  padding: 10px 20px;
+  margin: 0 10px;
+  color: #333;
+  font-weight: 600;
+  cursor: pointer;
+  width: 150px; /* Set a fixed width */
+  text-align: center; /* Center the text */
+}
+
+.button:hover {
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+.header {
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 50px 20px;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.empower-your-learning {
+  font-size: 36px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.introducing-our-virtual-assist-wrapper {
+  background-color: rgba(255, 255, 255, 0.8); /* Lighter semi-transparent background */
+  padding: 20px;
+  border-radius: 10px;
+  margin-top: 70px;
+}
+
+.introducing-our-virtual {
+  font-size: 24px;
+  font-weight: 500;
+}
+
+.features-section {
+  padding: 50px 20px;
+  background-color: rgba(255, 255, 255, 0.8); /* Lighter semi-transparent background */
+  border-radius: 10px;
+  margin-top: 20px;
+}
+
+.key-features-of {
+  font-size: 28px;
+  font-weight: 700;
+}
+
+.feature-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.feature-list-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 10px;
+}
+
+.feature-list-inner img {
+  width: 50px;
+  height: 50px;
+  margin-top: 10px;
+}
+
+.faq-section {
+  padding: 50px 20px;
+  background-color: rgba(255, 255, 255, 0.8); /* Lighter semi-transparent background */
+  border-radius: 10px;
+  margin-top: 20px;
+}
+
+.q-how-can-container,
+.q-what-kind-container,
+.q-is-the-container,
+.qhow-does-this-container {
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 20px;
+  border-radius: 10px;
+  margin: 10px;
+}
+
+.footer {
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 20px;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.blindtech-all-rights {
+  font-size: 14px;
+}

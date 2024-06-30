@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BlindTech Tutor.</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+            color: #333;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        nav {
+            background-color: #150770;
+            padding: 1rem 0;
+        }
+        nav .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo {
+            color: #ecf0f1;
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+        .nav-buttons {
+            display: flex;
+            gap: 0.5rem;
+        }
+        .nav-buttons a {
+            color: #ecf0f1;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            transition: background-color 0.3s, color 0.3s;
+            border: 1px solid #ecf0f1;
+        }
+        .nav-buttons a:hover {
+            background-color: #3498db;
+        }
+        .nav-buttons a.active {
+            background-color: #3498db;
+            color: #fff;
+        }
+        header {
+            background-color: #3498db;
+            color: #ecf0f1;
+            text-align: center;
+            padding: 1.5rem 0;  /* Reduced from 4rem to 2rem */
+        }
+        .header-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .header-text {
+            flex: 1;
+        }
+        .header-text h1 {
+            font-size: 2rem;  /* Reduced font size */
+            margin-bottom: 0.5rem;  /* Added margin for spacing */
+        }
+        .header-text h2 {
+            font-size: 1.2rem;  /* Reduced font size */
+        }
+        .header-image {
+            flex: 1;
+            max-width: 40%;  /* Reduced from 50% to 40% */
+        }
+        .header-image img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+        .typewriter h2 {
+            overflow: hidden;
+            border-right: .15em solid #ecf0f1;
+            white-space: nowrap;
+            margin: 0 auto;
+            letter-spacing: .15em;
+            animation: 
+                typing 3.5s steps(40, end),
+                blink-caret .75s step-end infinite,
+                erase 2s steps(40, end) 3.5s,
+                pause 1s 5.5s,
+                repeat 12s 6.5s infinite;
+        }
+
+        @keyframes typing {
+            from { width: 0 }
+            to { width: 100% }
+        }
+
+        @keyframes blink-caret {
+            from, to { border-color: transparent }
+            50% { border-color: #ecf0f1; }
+        }
+
+        @keyframes erase {
+            from { width: 100% }
+            to { width: 0 }
+        }
+
+        @keyframes pause {
+            from { width: 0 }
+            to { width: 0 }
+        }
+
+        @keyframes repeat {
+            0% { width: 0 }
+            25% { width: 100% }
+            50% { width: 100% }
+            75% { width: 0 }
+            100% { width: 0 }
+        }
+        .features {
+            background-color: #ecf0f1;
+            padding: 4rem 0;
+        }
+
+        .features h2 {
+            text-align: center;
+            margin-bottom: 2rem;
+            color: #2c3e50;
+        }
+
+        .feature-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .feature-item {
+            background-color: #fff;
+            padding: 1.5rem;
+            border-radius: 5px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .feature-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+        }
+
+        .feature-item:nth-child(1) {
+            background-color: #3498db;
+            color: #fff;
+        }
+
+        .feature-item:nth-child(2) {
+            background-color: #e74c3c;
+            color: #fff;
+        }
+
+        .feature-item:nth-child(3) {
+            background-color: #2ecc71;
+            color: #fff;
+        }
+
+        .feature-item:nth-child(4) {
+            background-color: #f39c12;
+            color: #fff;
+        }
+
+        .feature-item h3 {
+            margin-top: 0;
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+            color: inherit;
+        }
+
+        .feature-item p {
+            margin-bottom: 0;
+            line-height: 1.5;
+        }
+        .faq {
+            background-color: #16a5d11a;
+            padding: 4rem 0;
+        }
+
+        .faq h2 {
+            text-align: center;
+            margin-bottom: 3rem;
+            color: #2c3e50;
+            font-size: 2.5rem;
+            position: relative;
+        }
+
+        .faq h2::after {
+            content: '';
+            display: block;
+            width: 50px;
+            height: 3px;
+            background-color: #3498db;
+            margin: 10px auto 0;
+        }
+
+        .faq-item {
+            background-color: #ffffff;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            overflow: hidden;
+            transition: box-shadow 0.3s ease;
+        }
+
+        .faq-item:hover {
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .faq-item h3 {
+            margin: 0;
+            padding: 1.5rem;
+            background-color: #3498db;
+            color: #ffffff;
+            cursor: pointer;
+            position: relative;
+            transition: background-color 0.3s ease;
+        }
+
+        .faq-item h3:hover {
+            background-color: #2980b9;
+        }
+
+        .faq-item h3::after {
+            content: '+';
+            position: absolute;
+            right: 1.5rem;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 1.5rem;
+            transition: transform 0.3s ease;
+        }
+
+        .faq-item.active h3::after {
+            transform: translateY(-50%) rotate(45deg);
+        }
+
+        .faq-item p {
+            margin: 0;
+            padding: 0 1.5rem;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease, padding 0.5s ease;
+        }
+
+        .faq-item.active p {
+            padding: 1.5rem;
+            max-height: 1000px;
+        }
+        #siriWaveContainer {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: black;
+            z-index: 9999;
+            display: none;
+        }
+        .siri-message {
+            position: fixed;
+            top: 20%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            z-index: 10000;
+            font-size: 1.5rem;
+        }
+        footer {
+            background-color:  #150770;
+            color: #ecf0f1;
+            text-align: center;
+            padding: 1rem 0;
+        }
+        .mic-button {
+            position: absolute;
+            top: 300px;
+            left: 20px;
+            background-color: #fff;
+            border: 2px solid #3498db;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+        .mic-button:hover {
+            background-color: #3498db;
+            transform: scale(1.1);
+        }
+        .mic-button img {
+            width: 30px;
+            height: 30px;
+        }
+
+        .mic-button:nth-child(2) {
+            left: 100px;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="container">
+            <div class="logo">BlindTech Tutor</div>
+            <div class="nav-buttons">
+                <a href="#" class="active">Home</a>
+                <a href="module.html">Modules</a>
+                <a href="#">Progress</a>
+                <a href="virtual_assists.html">Virtual Assistant</a>
+                <a href="#">Contact Us</a>
+                <a href="#">Login/Register</a>
+            </div>
+        </div>
+    </nav>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="header-text">
+                    <h1>Empower Your Learning Journey Today!</h1>
+                    <div class="typewriter">
+                        <h2>Introducing Our Virtual Assistant, LAIKA!</h2>
+                    </div>
+                </div>
+                <div class="header-image">
+                    <img src="bot.gif" alt="Virtual Assistant Laika">
+                </div>
+            </div>
+        </div>
+        <div class="mic-button" id="voice-assist-mic">
+            <img src="microphone-solid.svg" alt="Microphone Icon">
+        </div>
+        
+        <div class="mic-button" id="gesture-mic">  
+          <img src="hand-solid.svg" alt="voice Icon">
+        </div>
+    </header>
+
+    <section class="features">
+        <div class="container">
+            <h2>KEY FEATURES OF THE VIRTUAL ASSISTANT PLATFORM</h2>
+            <div class="feature-list">
+                <div class="feature-item">
+                    <h3>VOICE-BASED INTERACTION</h3>
+                    <p>Engage with the virtual assistant through voice commands for seamless communication</p>
+                </div>
+                <div class="feature-item">
+                    <h3>SPEECH RECOGNITION</h3>
+                    <p>Understand user command and responses accurately with speech recognition technology</p>
+                </div>
+                <div class="feature-item">
+                    <h3>GESTURE RECOGNITION</h3>
+                    <p>Navigate through lessons by using gestures such as raising a hand or showing objects</p>
+                </div>
+                <div class="feature-item">
+                    <h3>EDUCATIONAL MODULES</h3>
+                    <p>Access structured lessons covering fundamental computer skills tailored for blind individuals aged 6 and above</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="faq">
+      <div class="container">
+          <h2>Frequently Asked Questions</h2>
+          <div class="faq-list">
+              <div class="faq-item">
+                  <h3>Q. How can the Virtual Assistant help Blind Individuals to learn Computer Skills?</h3>
+                  <p>Blind users may study hands-free thanks to the virtual assistant's usage of AI and machine learning, which enables voice commands and gesture detection.</p>
+              </div>
+              <div class="faq-item">
+                  <h3>Q. What kind of Computer Skills are covered in the educational modules?</h3>
+                  <p>Basic subjects including Introduction to computers (CPU, Mouse, Keyboard), Basic Software Usage (Email, Web Browsing), Keyboard skills, and Navigation are covered in the instructional modules.</p>
+              </div>
+              <div class="faq-item">
+                  <h3>Q. Is the platform accessible for the Blind Users?</h3>
+                  <p>Yes, the platform is made with blind people's accessibility and usability in mind. It includes features like keyboard navigation, high contrast images, and compatibility with screen readers.</p>
+              </div>
+              <div class="faq-item">
+                  <h3>Q. How does this platform track user progress?</h3>
+                  <p>The platform keeps track of users' progress by evaluating how well they complete interactive exercises and courses, and it modifies lesson plans according to each user's unique learning style.</p>
+              </div>
+          </div>
+      </div>
+  </section>
+  
+  <script>
+  document.querySelectorAll('.faq-item h3').forEach(question => {
+      question.addEventListener('click', () => {
+          const item = question.parentNode;
+          item.classList.toggle('active');
+      });
+  });
+  </script>
+   <div id="siriWaveContainer">
+    <p class="text-start text-light mb-4 siri-message" style="color: #ecf0f1;">Hello I am Laika</p>
+</div>
+<script>
+    function greetUser() {
+            const utterance = new SpeechSynthesisUtterance("Hello! Welcome to BlindTech Tutor. How can I assist you today?");
+            speechSynthesis.speak(utterance);
+        }
+
+        // Call the greetUser function when the page loads
+        window.onload = function() {
+            greetUser();
+        };
+</script>
+<script src="https://unpkg.com/siriwave/dist/siriwave.umd.min.js"></script>
+<script>
+    var siriWave; // SiriWave instance
+
+    function initSiriWave() {
+        siriWave = new SiriWave({
+            container: document.getElementById('siriWaveContainer'),
+            width: window.innerWidth,
+            height: window.innerHeight,
+            speed: 0.1,
+            amplitude: 1,
+            frequency: 2,
+            style:'ios9'
+        });
+    }
+
+    function startSiriWave() {
+        initSiriWave();
+        siriWave.start();
+        document.getElementById('siriWaveContainer').style.display = 'block';
+    }
+
+    function stopSiriWave() {
+        if (siriWave) {
+            siriWave.stop();
+            document.getElementById('siriWaveContainer').style.display = 'none';
+        }
+    }
+
+    // Check for browser support
+    if ('webkitSpeechRecognition' in window) {
+        var recognition = new webkitSpeechRecognition();
+        recognition.continuous = true;
+        recognition.interimResults = true;
+
+        recognition.onresult = function(event) {
+            for (var i = event.resultIndex; i < event.results.length; ++i) {
+                if (event.results[i].isFinal) {
+                    var transcript = event.results[i][0].transcript.trim().toLowerCase();
+                    if (transcript === 'activate microphone') {
+                        document.getElementById('voice-assist-mic').click();
+                    }
+                    
+                }
+            }
+        };
+
+        recognition.onerror = function(event) {
+            console.error('Speech recognition error', event);
+        };
+
+
+        recognition.start();
+    } else {
+        console.warn('Speech recognition not supported in this browser.');
+    }
+
+    document.getElementById('voice-assist-mic').addEventListener('click', function() {
+        startSiriWave();
+        eel.talk()()
+        eel.allCommand()()
+        
+
+
+
+    });
+
+
+    //if ('webkitSpeechRecognition' in window) {
+        //var recognition = new webkitSpeechRecognition();
+        //recognition.continuous = true;
+        //recognition.interimResults = true;
+
+        //recognition.onresult = function(event) {
+           // for (var i = event.resultIndex; i < event.results.length; ++i) {
+                //if (event.results[i].isFinal) {
+                    //var transcript = event.results[i][0].transcript.trim().toLowerCase();
+                    //if (transcript === 'activate gesture') {
+                        //document.getElementById('gesture-mic').click();
+                  //  }
+                    
+             //   }
+         //   }
+        //};
+
+        //recognition.onerror = function(event) {
+            //console.error('gesture recognition error', event);
+       // };
+
+
+        //recognition.start();
+    //} else {
+      //  console.warn('gesture recognition not supported in this browser.');
+  //  }
+
+   // document.getElementById('gesture-mic').addEventListener('click', function() {
+       // eel.start_gesture_recognition()() } )
+ </script>
+
+
+  <script src="/eel.js"></script>
+</head>
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 BlindTech Tutor. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

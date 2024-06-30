@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BlindTech Tutor - Modules</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        nav {
+            background-color: #150770;
+            padding: 1rem 0;
+        }
+        nav .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 90%;
+            margin: auto;
+        }
+        .logo {
+            color: #ecf0f1;
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+        .nav-buttons {
+            display: flex;
+            gap: 0.5rem;
+        }
+        .nav-buttons a {
+            color: #ecf0f1;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            transition: background-color 0.3s, color 0.3s;
+            border: 1px solid #ecf0f1;
+        }
+        .nav-buttons a:hover {
+            background-color: #3498db;
+        }
+        .nav-buttons a.active {
+            background-color: #3498db;
+            color: #fff;
+        }
+        .container {
+            width: 90%;
+            margin: auto;
+        }
+        .module-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            margin-top: 20px;
+        }
+        .module-box {
+            width: 45%;
+            margin-bottom: 20px;
+            border-radius: 10px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            background-color: #ffffff;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .module-box:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+        }
+        .module-header {
+            background-color: #3498db;
+            color: #ffffff;
+            padding: 15px;
+            cursor: pointer;
+            font-weight: bold;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .module-header:after {
+            content: '\25BC';
+            font-size: 0.8em;
+            transition: transform 0.3s ease;
+        }
+        .module-header.active:after {
+            transform: rotate(180deg);
+        }
+        .module-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+        .module-content.active {
+            max-height: 500px;
+        }
+        .module-content ul {
+            list-style-type: none;
+            padding: 15px;
+            margin: 0;
+        }
+        .module-content li {
+            margin-bottom: 10px;
+            padding: 5px 0;
+            border-bottom: 1px solid #eee;
+        }
+        .module-content li:last-child {
+            border-bottom: none;
+        }
+        .module-content li a {
+            color: #3498db;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        .module-content li a:hover {
+            color: #2980b9;
+            text-decoration: underline;
+        }
+        main {
+            flex: 1;
+        }
+        footer {
+            background-color: #150770;
+            color: #ecf0f1;
+            text-align: center;
+            padding: 1rem 0;
+            margin-top: auto;
+        }
+        .progress-bar {
+            width: 100%;
+            background-color: #e0e0e0;
+            height: 5px;
+            margin-top: 10px;
+        }
+        .progress {
+            width: 0;
+            height: 100%;
+            background-color: #2ecc71;
+            transition: width 0.3s ease;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="container">
+            <div class="logo">BlindTech Tutor</div>
+            <div class="nav-buttons">
+                <a href="{{ url_for('index') }}">Home</a>
+                <a href="{{ url_for('modules') }}">Modules</a>
+                <a href="{{ url_for('progress') }}">Progress</a>
+                <a href="{{ url_for('virtual_assistant') }}">Virtual Assistant</a>
+                <a href="{{ url_for('contact_us') }}">Contact Us</a>
+                <a href="{{ url_for('login_register') }}">Login/Register</a>
+                
+            </div>
+        </div>
+    </nav>
+
+    <main class="container">
+        <h1>Course Modules</h1>
+        <div class="module-container">
+            <div class="module-box">
+                <div class="module-header">Week 1: Introduction to Computers and Basic Components</div>
+                <div class="module-content">
+                    <ul>
+                        <li><a href="day1.html">Day 1: Understanding Computers</a></li>
+
+                        <li><a href="day2.html">Day 2: Detailed Component Descriptions</a></li>
+                        <li><a href="day3.html">Day 3: Keyboard Familiarization</a></li>
+                        <li><a href="day4.html">Day 4: Using the Mouse</a></li>
+                        <li><a href="day5.html">Day 5: Introduction to Software</a></li>
+                    </ul>
+                    <div class="progress-bar">
+                        <div class="progress" data-progress="0"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="module-box">
+                <div class="module-header">Week 2: Intermediate Computer Skills</div>
+                <div class="module-content">
+                    <ul>
+                        <li><a href="day6.html">Day 6: Typing Skills Development</a></li>
+                        <li><a href="day7.html">Day 7: File Management Basics</a></li>
+                        <li><a href="day8.html">Day 8: Introduction to Word Processing</a></li>
+                        <li><a href="day9.html">Day 9: Navigating the Operating System</a></li>
+                        <li><a href="day10.html">Day 10: Internet Basics</a></li>
+                    </ul>
+                    <div class="progress-bar">
+                        <div class="progress" data-progress="0"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="module-box">
+                <div class="module-header">Week 3: Advanced Computer Skills</div>
+                <div class="module-content">
+                    <ul>
+                        <li><a href="day11.html">Day 11: Email Basics</a></li>
+                        <li><a href="day12.html">Day 12: Accessibility Tools</a></li>
+                        <li><a href="day13.html">Day 13: Advanced Typing Practice</a></li>
+                        <li><a href="day14.html">Day 14: Introduction to Spreadsheets</a></li>
+                        <li><a href="day15.html">Day 15: Safe Computing Practices</a></li>
+                    </ul>
+                    <div class="progress-bar">
+                        <div class="progress" data-progress="0"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="module-box">
+                <div class="module-header">Week 4: Practical Applications and Reinforcement</div>
+                <div class="module-content">
+                    <ul>
+                        <li><a href="day16.html">Day 16: Document Creation and Formatting</a></li>
+                        <li><a href="day17.html">Day 17: More on Internet Usage</a></li>
+                        <li><a href="day18.html">Day 18: Multimedia Basics</a></li>
+                        <li><a href="day19.html">Day 19: Collaboration Tools</a></li>
+                        <li><a href="day20.html">Day 20: Review and Assessment</a></li>
+                    </ul>
+                    <div class="progress-bar">
+                        <div class="progress" data-progress="0"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 BlindTech Tutor. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.querySelectorAll('.module-header').forEach(header => {
+            header.addEventListener('click', () => {
+                const content = header.nextElementSibling;
+                content.classList.toggle('active');
+                header.classList.toggle('active');
+                
+                // Simulate progress update
+                const progressBar = content.querySelector('.progress');
+                let currentProgress = parseInt(progressBar.getAttribute('data-progress'));
+                if (currentProgress < 100) {
+                    currentProgress += 20;
+                    progressBar.style.width = `${currentProgress}%`;
+                    progressBar.setAttribute('data-progress', currentProgress);
+                }
+            });
+        });
+    </script>
+</body>
+</html>
