@@ -88,4 +88,6 @@ https://github.com/Shib-Sankar-Das/C-Programming/assets/136646947/aebfb827-5e96-
 
 
 ##Authors:
-Co-authored-by:Anushka Mukherjee <mukherjeeanushka376@gmail.com>
+
+-Co-authored-by:Anushka Mukherjee(Hikari006) <mukherjeeanushka376@gmail.com>
+
