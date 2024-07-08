@@ -85,3 +85,10 @@ A window will open showing the webcam feed. Move your hand in front of the camer
 
 
 https://github.com/Shib-Sankar-Das/C-Programming/assets/136646947/aebfb827-5e96-4d0d-b2ed-524108fee6fa
+
+
+## Authors:
+
+- Co-authored-by: Anushka Mukherjee <https://github.com/Hikari006>
+- Co-authored-by: Srijani Som <https://github.com/srijanisom09>
+
