@@ -1,0 +1,11 @@
+opencv-python==4.9.0.80
+mediapipe
+pyautogui==0.9.54
+eel==0.16.0
+pywhatkit==5.4
+pyttsx3==2.90
+mss==9.0.1
+pytesseract==0.3.10
+numpy
+SpeechRecognition==3.10.4
+pypiwin32==223
