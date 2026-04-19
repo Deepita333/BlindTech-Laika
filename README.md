@@ -49,13 +49,23 @@ Before running the code, make sure you have the following dependencies installed
 2. Navigate to the project directory:
     sh
     cd BlindTech-Laika
-    
-3. Run the code:
-    sh
-    python app.py
-    
 
-A window will open showing the webcam feed. Move your hand in front of the camera to control the cursor and perform gestures. To exit the program, press 'q' in the OpenCV window.
+3. Create and activate a Python environment (recommended):
+    sh
+    python -m venv venv
+    venv\Scripts\activate
+
+4. Install the required dependencies:
+    sh
+    pip install -r requirements.txt
+
+5. Run the app from the `engine` folder:
+    sh
+    python engine\app.py
+
+6. If you encounter an import error for `aifc`, use a compatible Python version such as Python 3.9.
+
+A browser window will open the local Eel interface. The app should output `Listening...` in the terminal when it starts. To close the app, close the browser window and stop the Python process.
 
 ## Hand Gestures and Actions
 
